@@ -1,0 +1,168 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "serialNumber": "urn:uuid:a90ce8c7-434d-4e69-8c4d-0642e50d8dd2",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2023-07-26T19:15:15.044Z",
+    "tools": [
+      {
+        "vendor": "cyclonedx",
+        "name": "cdxgen",
+        "version": "9.2.2"
+      }
+    ],
+    "authors": [
+      {
+        "name": "Prabhu Subramanian",
+        "email": "prabhu@appthreat.com"
+      }
+    ],
+    "component": {
+      "name": "nested-java-project",
+      "type": "application",
+      "group": "com.ajmalab",
+      "version": "1.0.0",
+      "properties": [
+        {
+          "name": "buildFile",
+          "value": "/Users/Ajmal.Kottilingal/dev/nested-java-project/build.gradle"
+        },
+        {
+          "name": "projectDir",
+          "value": "/Users/Ajmal.Kottilingal/dev/nested-java-project"
+        },
+        {
+          "name": "rootDir",
+          "value": "/Users/Ajmal.Kottilingal/dev/nested-java-project"
+        }
+      ],
+      "purl": "pkg:maven/com.ajmalab/nested-java-project@1.0.0?type=jar",
+      "bom-ref": "pkg:maven/com.ajmalab/nested-java-project@1.0.0?type=jar",
+      "components": [
+        {
+          "name": "service",
+          "type": "application",
+          "group": "com.ajmalab",
+          "version": "1.0.0",
+          "properties": [
+            {
+              "name": "buildFile",
+              "value": "/Users/Ajmal.Kottilingal/dev/nested-java-project/service/build.gradle"
+            },
+            {
+              "name": "projectDir",
+              "value": "/Users/Ajmal.Kottilingal/dev/nested-java-project/service"
+            },
+            {
+              "name": "rootDir",
+              "value": "/Users/Ajmal.Kottilingal/dev/nested-java-project"
+            }
+          ],
+          "purl": "pkg:maven/com.ajmalab/service@1.0.0?type=jar",
+          "bom-ref": "pkg:maven/com.ajmalab/service@1.0.0?type=jar"
+        },
+        {
+          "name": "starters",
+          "type": "application",
+          "group": "com.ajmalab",
+          "version": "1.0.0",
+          "properties": [
+            {
+              "name": "buildFile",
+              "value": "/Users/Ajmal.Kottilingal/dev/nested-java-project/starters/build.gradle"
+            },
+            {
+              "name": "projectDir",
+              "value": "/Users/Ajmal.Kottilingal/dev/nested-java-project/starters"
+            },
+            {
+              "name": "rootDir",
+              "value": "/Users/Ajmal.Kottilingal/dev/nested-java-project"
+            }
+          ],
+          "purl": "pkg:maven/com.ajmalab/starters@1.0.0?type=jar",
+          "bom-ref": "pkg:maven/com.ajmalab/starters@1.0.0?type=jar"
+        },
+        {
+          "name": "starters/client-starter-1",
+          "type": "application",
+          "version": "latest",
+          "purl": "pkg:maven/com.ajmalab/starters/client-starter-1@latest?type=jar",
+          "bom-ref": "pkg:maven/com.ajmalab/starters/client-starter-1@latest?type=jar"
+        },
+        {
+          "name": "starters/client-starter-2",
+          "type": "application",
+          "version": "latest",
+          "purl": "pkg:maven/com.ajmalab/starters/client-starter-2@latest?type=jar",
+          "bom-ref": "pkg:maven/com.ajmalab/starters/client-starter-2@latest?type=jar"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "author": "",
+      "publisher": "",
+      "group": "com.google.guava",
+      "name": "guava",
+      "version": "32.1.1-jre",
+      "description": "",
+      "licenses": [],
+      "purl": "pkg:maven/com.google.guava/guava@32.1.1-jre?type=jar",
+      "type": "library",
+      "bom-ref": "pkg:maven/com.google.guava/guava@32.1.1-jre?type=jar",
+      "properties": [
+        {
+          "name": "GradleProfileName",
+          "value": "compileClasspath"
+        }
+      ]
+    },
+    {
+      "author": "",
+      "publisher": "",
+      "group": "",
+      "name": "gradle",
+      "version": "wrapper",
+      "description": "",
+      "licenses": [],
+      "purl": "pkg:maven/gradle@wrapper",
+      "type": "library",
+      "bom-ref": "pkg:maven/gradle@wrapper",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "gradle-wrapper.jar"
+        }
+      ]
+    }
+  ],
+  "services": [],
+  "dependencies": [
+    {
+      "ref": "pkg:maven/com.ajmalab/nested-java-project@1.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/com.ajmalab/service@1.0.0?type=jar",
+        "pkg:maven/com.ajmalab/starters@1.0.0?type=jar",
+        "pkg:maven/com.ajmalab/starters/client-starter-1@latest?type=jar",
+        "pkg:maven/com.ajmalab/starters/client-starter-2@latest?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/com.ajmalab/service@1.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/com.google.guava/guava@32.1.1-jre?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/com.google.guava/guava@32.1.1-jre?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/com.ajmalab/starters@1.0.0?type=jar",
+      "dependsOn": []
+    }
+  ]
+}

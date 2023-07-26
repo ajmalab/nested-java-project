@@ -1,0 +1,5 @@
+rootProject.name='nested-java-project'
+
+include 'service'
+include 'starters:client-starter-1'
+include 'starters:client-starter-2'

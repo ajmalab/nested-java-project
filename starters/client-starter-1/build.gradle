@@ -1,0 +1,8 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-parent:59'
+    api project(':starters:client-starter-2')
+}
